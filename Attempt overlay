@@ -1,0 +1,47 @@
+import React from "react";
+
+export default function MTGTwitchOverlay() {
+  return (
+    <div className="relative w-screen h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-700 text-white font-serif overflow-hidden">
+      {/* Decorative border */}
+      <div className="absolute inset-0 border-8 border-yellow-600 rounded-2xl pointer-events-none"></div>
+
+      {/* Top banner */}
+      <div className="absolute top-0 left-0 w-full flex justify-center items-center p-4 bg-gradient-to-r from-red-800 via-purple-800 to-blue-800 shadow-lg">
+        <h1 className="text-4xl font-bold tracking-wide drop-shadow-lg">
+          Nexus for Legends
+        </h1>
+      </div>
+
+      {/* Webcam frame */}
+      <div className="absolute bottom-8 left-8 w-80 h-48 border-4 border-yellow-600 rounded-xl shadow-lg bg-black/60 backdrop-blur-md flex items-center justify-center">
+        <span className="text-lg font-bold">Webcam</span>
+      </div>
+
+      {/* Recent Events Panel */}
+      <div className="absolute top-24 right-8 w-80 border-4 border-indigo-600 rounded-xl bg-black/70 shadow-lg p-4">
+        <h2 className="text-2xl font-bold border-b border-indigo-400 pb-2 mb-2">Recent Events</h2>
+        <ul className="space-y-2 text-lg">
+          <li>✨ New Follower</li>
+          <li>💎 New Subscriber</li>
+          <li>🎁 Donation</li>
+        </ul>
+      </div>
+
+      {/* Chat panel */}
+      <div className="absolute bottom-8 right-8 w-96 h-64 border-4 border-green-600 rounded-xl bg-black/70 shadow-lg p-4 overflow-y-auto">
+        <h2 className="text-2xl font-bold border-b border-green-400 pb-2 mb-2">Chat</h2>
+        <div className="space-y-2 text-sm">
+          <p><span className="text-green-400">User1:</span> That was an awesome play!</p>
+          <p><span className="text-green-400">User2:</span> Draw into the win!</p>
+          <p><span className="text-green-400">User3:</span> Love the deck build!</p>
+        </div>
+      </div>
+
+      {/* Card back watermark */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        <img src="https://cards.scryfall.io/art_crop/front/7/4/74e7b2d0-793d-44a7-a553-cc1fd9e8c2aa.jpg" alt="MTG Card Back" className="w-[70%] rounded-2xl" />
+      </div>
+    </div>
+  );
+}
